@@ -3,4 +3,10 @@
 @tailwind utilities;
 * {
   box-sizing: border-box;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow: hidden;
 }

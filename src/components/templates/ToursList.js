@@ -6,10 +6,13 @@ export default async function ToursList() {
   const data = await res.json();
 
   return (
-    <div className="flex flex-wrap justify-center gap-[24.75px] w-auto h-auto mt-[84px]">
-      {data.map((tour, index) => (
-        <TourCard key={index} data={tour} />
-      ))}
+    <div className="w-full mt-[84px]  ">
+      <h1 className="mb-[11px] text-[32px]">همه تور ها</h1>
+      <div className="flex flex-wrap justify-between gap-[24.75px] w-auto h-auto  ">
+        {data.map((tour, index) => (
+          <TourCard key={index} data={tour} />
+        ))}
+      </div>
     </div>
   );
 }
