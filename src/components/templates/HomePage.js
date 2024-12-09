@@ -5,6 +5,7 @@ import ToursList from "./ToursList";
 import SearchBox from "./SearchBox";
 import ContactBanner from "../organizations/ContactBanner";
 import MoreFeatures from "./MoreFeatures";
+import WhyUs from "./WhyUs";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
         <SearchBox />
         <ToursList />
         <ContactBanner />
+        <WhyUs />
       </div>
       <MoreFeatures />
     </div>

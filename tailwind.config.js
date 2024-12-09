@@ -10,6 +10,7 @@ module.exports = {
         "secondary-color": "#10411B",
         "text-color": "#282828",
         "complementry-color": "#009ECA",
+        // "primary-gradiant": "linear-gradient(180deg, #28A745 0%, #10411B 100%)",
       },
     },
   },
