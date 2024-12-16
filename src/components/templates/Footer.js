@@ -33,7 +33,7 @@ function Footer() {
           </div>
           <div className="flex flex-col items-end gap-5">
             <Image src={torino} width={146} height={44} alt="logo" />
-            <p>تلفن پشتیبانی :۰۲۱-۸۵۴۷</p>
+            <p className="">تلفن پشتیبانی :۸۵۴۷-۰۲۱</p>
             <div className="flex justify-end gap-6">
               <Image src={aira} width={68} height={74} alt="logo" />
               <Image src={samandeh} width={67} height={74} alt="logo" />
