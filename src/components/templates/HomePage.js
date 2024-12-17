@@ -6,10 +6,13 @@ import SearchBox from "./SearchBox";
 import ContactBanner from "../organizations/ContactBanner";
 import MoreFeatures from "./MoreFeatures";
 import WhyUs from "./WhyUs";
+import AuthForm from "./AuthForm";
 
 export default function HomePage() {
   return (
     <div>
+      {/* <AuthForm /> */}
+
       <Banner />
       <div className="px-[126px] flex flex-col items-center">
         <SearchBox />
