@@ -4,15 +4,17 @@ import Footer from "@/components/templates/Footer";
 import TanstackQueryProvider from "@/provider/TanstackQueryProvider";
 import { ToastContainer } from "react-toastify";
 import AuthForm from "@/components/templates/AuthForm";
+import LoginContextProvider from "@/provider/LoginContextProvider";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
       <body>
-        <Header />
         <TanstackQueryProvider>
-          <AuthForm />
-          {children}
+          <LoginContextProvider>
+            <Header />
+            {children}
+          </LoginContextProvider>
         </TanstackQueryProvider>
         <Footer />
         <ToastContainer />

@@ -1,8 +1,13 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
 import logo from "@/images/Torino-logo.svg";
 import Login_Button from "../atoms/Login_Button";
+import { loginFormContext } from "@/provider/LoginContextProvider";
+
 function Header() {
+  const { setShowLoginForm } = useContext(loginFormContext);
+
   return (
     <>
       <header className="w-screen pt-[15px] pb-3 px-[126px] h-[74px] overflow-hidden flex justify-between items-center ">
@@ -15,7 +20,7 @@ function Header() {
             <p>تماس با ما</p>
           </div>
         </div>
-        <Login_Button className="sm:hidden" />
+        <Login_Button className="sm:hidden" onClick={setShowLoginForm} />
       </header>
     </>
   );

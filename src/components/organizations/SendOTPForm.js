@@ -3,7 +3,10 @@ import Button_3xL from "../atoms/buttons/Button_3xL";
 import { useSendOTP } from "@/services/mutations";
 import { isValidMobile } from "@/utils/validation";
 import { toast } from "react-toastify";
-function SendOTPForm({ setMobile, mobile, setStep }) {
+import Image from "next/image";
+import cross from "@/images/icons/cross.svg";
+
+function SendOTPForm({ setMobile, mobile, setStep, setShowLoginForm }) {
   const { isPending, mutate } = useSendOTP();
   const sendOTPHandler = (e) => {
     e.preventDefault();
@@ -24,7 +27,13 @@ function SendOTPForm({ setMobile, mobile, setStep }) {
     );
   };
   return (
-    <div className="bg-white w-[561px] h-[362px] rounded-[20px] flex flex-col items-center pt-[54px] pr-[30px] pl-10 pb-10 gap-10">
+    <div className="bg-white w-[561px] h-[362px] rounded-[20px] flex flex-col items-center pt-[54px] pr-[30px] pl-10 pb-10 gap-10 relative">
+      <button
+        className=" absolute top-4 left-4"
+        onClick={() => setShowLoginForm(false)}
+      >
+        <Image src={cross} width={20} height={20} alt="cross" />
+      </button>
       <h1>ورود به تورینو</h1>
       <form onSubmit={sendOTPHandler}>
         <label className="text-text-color">شماره مبایل خود را وارد کنید</label>

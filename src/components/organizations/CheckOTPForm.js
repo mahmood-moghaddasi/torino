@@ -4,6 +4,8 @@ import OtpInput from "react18-input-otp";
 import Button_3xL from "../atoms/buttons/Button_3xL";
 import { useCheckOTP } from "@/services/mutations";
 import { setCookie } from "@/utils/cookie";
+import Image from "next/image";
+import cross from "@/images/icons/cross.svg";
 function CheckOTPForm({ mobile, setStep }) {
   const { mutate, isPending } = useCheckOTP();
   const [code, setCode] = useState("");
@@ -29,7 +31,14 @@ function CheckOTPForm({ mobile, setStep }) {
     );
   };
   return (
-    <div className="bg-white w-[561px] h-[362px] rounded-[20px] flex flex-col items-center pt-[54px] pr-[30px] pl-10 pb-10 ">
+    <div className="bg-white w-[561px] h-[362px] rounded-[20px] flex flex-col items-center pt-[54px] pr-[30px] pl-10 pb-10 relative">
+      <button
+        className=" absolute top-4 left-4"
+        onClick={() => setShowLoginForm(false)}
+      >
+        <Image src={cross} width={20} height={20} alt="cross" />
+      </button>
+
       <h1 className="text-[28px] text-text-color font-semibold">
         کد تایید را وارد کنید
       </h1>
