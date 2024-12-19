@@ -4,6 +4,7 @@ import Button_2xS from "../atoms/buttons/Button_2xS";
 
 function TourCard({ data }) {
   const { id, origin, title, price, startDate, endDate, image } = data;
+
   console.log(image);
   return (
     <div className="">
@@ -19,7 +20,7 @@ function TourCard({ data }) {
         <p className="text-text-color opacity-65 text-[15px]">هتل 3 ستاره</p>
       </div>
       <div className="flex justify-between p-2 border rounded-b-[10px]">
-        <Button_2xS text={"رزرو"} />
+        <Button_2xS text={"رزرو"} tourId={id} />
         <span>{price}تومان</span>
       </div>
     </div>

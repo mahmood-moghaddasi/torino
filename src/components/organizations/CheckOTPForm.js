@@ -6,7 +6,7 @@ import { useCheckOTP } from "@/services/mutations";
 import { setCookie } from "@/utils/cookie";
 import Image from "next/image";
 import cross from "@/images/icons/cross.svg";
-function CheckOTPForm({ mobile, setStep }) {
+function CheckOTPForm({ mobile, setStep, setShowLoginForm }) {
   const { mutate, isPending } = useCheckOTP();
   const [code, setCode] = useState("");
   const changeHandler = (otp) => {
@@ -23,6 +23,7 @@ function CheckOTPForm({ mobile, setStep }) {
           setCookie("accessToken", data?.data?.accessToken, 30);
           setCookie("refreshToken", data?.data?.refreshToken, 365);
           setStep(1);
+          setShowLoginForm(false);
         },
         onError: (error) => {
           console.log(error);
