@@ -2,9 +2,10 @@
 import EditPersonalInfo from "../organizations/EditPersonalInfo";
 import EditBankAccInfo from "../organizations/EditBankAccInfo";
 import EditUserAccInfo from "../organizations/EditUserAccInfo";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useUserProfile } from "@/services/mutations";
 import { useRouter } from "next/navigation";
+import { useGetUserData } from "@/services/queries";
 
 function EditProfilePage() {
   const [form, setForm] = useState({
@@ -22,7 +23,7 @@ function EditProfilePage() {
     },
   });
   const router = useRouter();
-  console.log(form);
+
   const formHandler = (e) => {
     const value = e.target.value;
     const name = e.target.name;
@@ -33,9 +34,8 @@ function EditProfilePage() {
       payment: { ...form.payment, [name]: value },
     });
   };
+  const { data } = useGetUserData();
   const { mutate, isPending } = useUserProfile();
-  const all = useUserProfile();
-  console.log(all);
   const submitHandler = () => {
     if (isPending) return;
     mutate(
@@ -51,6 +51,9 @@ function EditProfilePage() {
       }
     );
   };
+  useEffect(() => {
+    setForm(data.data.form || form);
+  }, [data?.data?.form]);
   return (
     <div className="w-full flex flex-col gap-[19px] mb-[154px]">
       <EditUserAccInfo
