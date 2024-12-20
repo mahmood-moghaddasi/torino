@@ -1,7 +1,12 @@
+"use client";
 import React from "react";
 import TransactionTRD from "../molecules/TransactionTRD";
+import { useGetUserTransaction } from "@/services/queries";
+import { Oval } from "react-loader-spinner";
 
 function TransactionsTable() {
+  const { data, isPending } = useGetUserTransaction();
+  console.log(data);
   return (
     <div className="w-full h-fit border rounded-xl overflow-hidden mb-[233px]">
       <table className="w-full table-fixed text-right ">
@@ -22,7 +27,25 @@ function TransactionsTable() {
           </tr>
         </thead>
         <tbody>
-          <TransactionTRD />
+          {isPending ? (
+            <Oval
+              visible={true}
+              height="80"
+              width="80"
+              color="#4fa94d"
+              ariaLabel="oval-loading"
+              wrapperStyle={{}}
+              wrapperClass=""
+            />
+          ) : data.data.length === 0 ? (
+            <tr>
+              <td className="px-4 py-[15px] ">تراکنشی وجود ندارد</td>
+            </tr>
+          ) : (
+            data.data.map((transaction) => (
+              <TransactionTRD transaction={transaction} />
+            ))
+          )}
         </tbody>
       </table>
     </div>
