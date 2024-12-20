@@ -11,7 +11,6 @@ import AuthForm from "./AuthForm";
 export default function HomePage() {
   return (
     <div>
-      <AuthForm />
       <Banner />
       <div className="px-[126px] flex flex-col items-center">
         <SearchBox />

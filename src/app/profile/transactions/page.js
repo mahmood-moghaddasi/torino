@@ -1,7 +1,8 @@
+import TransactionsPage from "@/components/templates/TransactionsPage";
 import React from "react";
 
-function page() {
-  return <div>page</div>;
+function Transactions() {
+  return <TransactionsPage />;
 }
 
-export default page;
+export default Transactions;

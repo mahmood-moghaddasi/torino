@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
         <TanstackQueryProvider>
           <LoginContextProvider>
             <Header />
+            <AuthForm />
             {children}
           </LoginContextProvider>
         </TanstackQueryProvider>
