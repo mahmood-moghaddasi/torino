@@ -1,7 +1,8 @@
+import MyToursPage from "@/components/templates/MyToursPage";
 import React from "react";
 
-function page() {
-  return <div>page</div>;
+function MyTours() {
+  return <MyToursPage />;
 }
 
-export default page;
+export default MyTours;
