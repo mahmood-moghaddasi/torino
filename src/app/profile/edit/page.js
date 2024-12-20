@@ -1,7 +1,8 @@
+import EditProfilePage from "@/components/templates/EditProfilePage";
 import React from "react";
 
-function page() {
-  return <div>page</div>;
+function EditProfile() {
+  return <EditProfilePage />;
 }
 
-export default page;
+export default EditProfile;
