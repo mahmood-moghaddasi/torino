@@ -5,7 +5,13 @@ import airplane from "@/images/icons/airplane.svg";
 import ship from "@/images/icons/ship.svg";
 import sun from "@/images/icons/sun.svg";
 
-function MyTourCard() {
+function MyTourCard({ tour }) {
+  const Vehicle =
+    tour.fleetVehicle === "bus"
+      ? bus
+      : tour.fleetVehicle === "airplane"
+        ? airplane
+        : ship;
   return (
     <div className=" relative  w-full h-[168px] flex flex-col border rounded-[10px] divide-y ">
       <div className=" absolute top-5 left-5 w-auto h-5 px-[7px] rounded-[27px] bg-primary-color/30">
@@ -17,28 +23,28 @@ function MyTourCard() {
         <div className="flex gap-[147px]">
           <div className="flex gap-2">
             <Image src={sun} width={24} height={24} alt="sun" />
-            <p className="text-[14px] font-normal text-black">
-              تور اقلیم کردستان
-            </p>
+            <p className="text-[14px] font-normal text-black">{tour.title}</p>
           </div>
           <div className="flex gap-2">
-            <Image src={airplane} width={28} height={28} alt="sun" />
-            <p className="text-[14px] font-normal text-black">سفر با هواپیما</p>
+            <Image src={Vehicle} width={28} height={28} alt="sun" />
+            <p className="text-[14px] font-normal text-black">
+              {tour.fleetVehicle}
+            </p>
           </div>
         </div>
         <div className="flex gap-[42px]">
           <div className="flex gap-2">
             <p className="text-[14px] font-semibold text-black">
-              تهران به سلیمانیه
+              {tour.origin.name} به {tour.destination.name}
             </p>
             <span className="text-[14px] font-normal text-black/60">
-              دوشنبه 15 شهریور 1402
+              {tour.startDate}
             </span>
           </div>
           <div className="flex gap-2">
             <p className="text-[14px] font-semibold text-black">تاریخ برگشت</p>
             <span className="text-[14px] font-normal text-black/60">
-              جمعه 19 شهریور 1402
+              {tour.endDate}
             </span>
           </div>
         </div>
@@ -47,7 +53,6 @@ function MyTourCard() {
         <div className="flex pl-[26px] gap-2">
           <p className="text-[14px] font-normal text-black/50">شماره تور</p>
           <span className="text-[14px] font-medium text-text-color">
-            {" "}
             0918234
           </span>
         </div>
@@ -56,7 +61,7 @@ function MyTourCard() {
             مبلغ پرداخت شده
           </p>
           <span className="text-[14px] font-medium text-text-color">
-            32424507
+            {tour.price}
           </span>
         </div>
       </div>

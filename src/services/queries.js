@@ -8,5 +8,11 @@ const useGetUserData = () => {
 
   return useQuery({ queryFn, queryKey });
 };
+const useGetUserTours = () => {
+  const queryFn = () => api.get("user/tours");
+  const queryKey = ["user-tours"];
 
-export { useGetUserData };
+  return useQuery({ queryFn, queryKey });
+};
+
+export { useGetUserData, useGetUserTours };

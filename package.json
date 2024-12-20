@@ -14,6 +14,7 @@
     "next": "14.2.20",
     "react": "^18",
     "react-dom": "^18",
+    "react-loader-spinner": "^6.1.6",
     "react-toastify": "^11.0.0",
     "react18-input-otp": "^1.1.4",
     "zaman": "^2.1.1"
