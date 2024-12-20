@@ -2,7 +2,9 @@ import Link from "next/link";
 import React from "react";
 import edit from "@/images/icons/edit2.svg";
 import Image from "next/image";
-function UserAccInfoCard() {
+function UserAccInfoCard({ user }) {
+  const { mobile, email } = user.data.form;
+
   return (
     <div className="h-[115px] border rounded-[10px] w-full flex flex-col pr-3 pt-3 pl-4 gap-7 overflow-hidden">
       <div className="flex justify-between">
@@ -14,20 +16,20 @@ function UserAccInfoCard() {
           href="profile/edit"
         >
           افزودن
-          <Image src={edit} width={16} height={16} />
+          <Image src={edit} width={16} height={16} alt="icon" />
         </Link>
       </div>
       <div className="flex justify-between w-full relative">
         <div className="flex gap-9 ">
           <p className="text-[14px] font-light">شماره مبایل</p>
           <span className="text-[14px] font-normal text-text-color">
-            ۰۹۱۷۹۵۸۹۳۹۵
+            {mobile}
           </span>
         </div>
         <div className="flex absolute right-[484px] gap-9">
           <p className="text-[14px] font-light">ایمیل</p>
           <span className="text-[14px] font-normal text-text-color">
-            mahmood1380.mm@gmail.com
+            {email || "---"}
           </span>
         </div>
       </div>

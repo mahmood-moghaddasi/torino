@@ -10,14 +10,14 @@ function EditProfilePage() {
   const [form, setForm] = useState({
     mobile: 0,
     email: "",
-    firstName: "mahmood",
-    lastName: "moghadasi",
-    gender: "malw",
-    birthDate: "2022-10-02",
+    firstName: "",
+    lastName: "",
+    gender: "",
+    birthDate: "",
     nationalCode: 0,
     payment: {
-      shaba_code: "32232",
-      debitCard_code: "322323",
+      shaba_code: "",
+      debitCard_code: "",
       accountIdentifier: "",
     },
   });
