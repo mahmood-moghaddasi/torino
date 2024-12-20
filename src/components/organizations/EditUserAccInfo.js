@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 
-function EditUserAccInfo() {
+function EditUserAccInfo({ form, formHandler, submitHandler }) {
   return (
     <div className="h-[115px] border rounded-[10px] w-full flex flex-col pr-3 pt-3 pl-[26px] gap-3 overflow-hidden">
       <div className="flex justify-between">
@@ -20,8 +21,14 @@ function EditUserAccInfo() {
           <input
             className="w-[255px] h-[45px] outline-none border rounded-[5px] pr-2 text-[14px] border-black/50"
             placeholder="آدرس ایمیل"
+            name="email"
+            value={form.email}
+            onChange={formHandler}
           />
-          <button className="w-[122px] h-[45px] text-[16px] font-semibold bg-primary-color rounded-[5px] text-white">
+          <button
+            className="w-[122px] h-[45px] text-[16px] font-semibold bg-primary-color rounded-[5px] text-white"
+            onClick={submitHandler}
+          >
             تایید
           </button>
         </div>

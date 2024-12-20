@@ -10,4 +10,9 @@ const useCheckOTP = () => {
   const mutationFn = (data) => api.post("auth/check-otp", data);
   return useMutation({ mutationFn });
 };
-export { useSendOTP, useCheckOTP };
+
+const useUserProfile = () => {
+  const mutationFn = (data) => api.put("user/profile", data);
+  return useMutation({ mutationFn });
+};
+export { useSendOTP, useCheckOTP, useUserProfile };

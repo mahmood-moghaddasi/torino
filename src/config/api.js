@@ -10,6 +10,9 @@ const api = axios.create({
 api.interceptors.request.use(
   (request) => {
     const accessToken = getCookie("accessToken");
+    // const accessToken =
+    //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlkNTIyZmM4LWFmZTEtNGNlZC1iY2M3LWIxNGQ2ODU2ZjA5YSIsIm1vYmlsZSI6IjA5MTc5NTg5Mzk1IiwiaWF0IjoxNzM0NzAzNzE4LCJleHAiOjE3MzQ3MDczMTh9.zyTcY2SV05f4kFLQ_DsEuc5ZGCJRlTc61-4UlZK7JUA";
+
     console.log(accessToken);
     if (accessToken) {
       request.headers["Authorization"] = `Bearer ${accessToken}`;
