@@ -14,8 +14,20 @@ import security from "@/images/icons/security.svg";
 import userTick from "@/images/icons/user-tick.svg";
 
 async function TourDetailCard({ data }) {
-  const { id, origin, title, price, startDate, endDate, image } = data;
-
+  const {
+    id,
+    origin,
+    title,
+    price,
+    startDate,
+    endDate,
+    image,
+    destination,
+    fleetVehicle,
+    availableSeats,
+    insurance,
+  } = data;
+  console.log(data);
   return (
     <div className="bg-white max-w-[1188px] h-[427px] pr-5 pl-6 pt-[29px] pb-5 flex flex-col gap-11 rounded-[10px]">
       <div className="flex h-[265px] gap-6">
@@ -65,7 +77,7 @@ async function TourDetailCard({ data }) {
             <Image src={routing} width={20} height={20} alt="icon" />
             <p>مبدا</p>
           </div>
-          <span>سنندج</span>
+          <span>{origin.name}</span>
         </div>
         <div className="pr-11 pl-[43px] pt-2 pb-[10px] flex flex-col gap-2">
           <div className="flex gap-2">
@@ -86,14 +98,14 @@ async function TourDetailCard({ data }) {
             <Image src={bus} width={20} height={20} alt="icon" />
             <p>حمل و نقل</p>
           </div>
-          <span>اتوبوس</span>
+          <span>{fleetVehicle}</span>
         </div>
         <div className="pr-11 pl-[43px] pt-2 pb-[10px] flex flex-col gap-2">
           <div className="flex gap-2">
             <Image src={profile2user} width={20} height={20} alt="icon" />
             <p>ظرفیت</p>
           </div>
-          <span>حداکثر 30 نفر</span>
+          <span>حداکثر {availableSeats} نفر</span>
         </div>
         <div className="pr-11 pl-[43px] pt-2 pb-[10px] flex flex-col gap-2">
           <div className="flex gap-2">
