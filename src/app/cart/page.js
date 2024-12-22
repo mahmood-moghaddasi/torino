@@ -1,7 +1,8 @@
+import CartPage from "@/components/templates/CartPage";
 import React from "react";
 
-function page() {
-  return <div>page</div>;
+function Cart() {
+  return <CartPage />;
 }
 
-export default page;
+export default Cart;
