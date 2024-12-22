@@ -32,19 +32,19 @@ async function TourDetailCard({ data }) {
           </p>
           <div className="flex gap-8 mt-2">
             <div className="flex gap-2">
-              <Image src={userTick} width={24} height={24} />
+              <Image src={userTick} width={24} height={24} alt="icon" />
               <span className="text-[20px] text-[#7D7D7D] font-normal">
                 تورلیدر از مبدا
               </span>
             </div>
             <div className="flex gap-2">
-              <Image src={map} width={24} height={24} />
+              <Image src={map} width={24} height={24} alt="icon" />
               <span className="text-[20px] text-[#7D7D7D] font-normal">
                 برنامه صفر
               </span>
             </div>
             <div className="flex gap-2">
-              <Image src={medal} width={24} height={24} />
+              <Image src={medal} width={24} height={24} alt="icon" />
               <span className="text-[20px] text-[#7D7D7D] font-normal">
                 تضمین کیفیت
               </span>
@@ -62,42 +62,42 @@ async function TourDetailCard({ data }) {
       <div className="flex divide-x divide-x-reverse">
         <div className="pr-11 pl-[43px] pt-2 pb-[10px] flex flex-col gap-2">
           <div className="flex gap-2">
-            <Image src={routing} width={20} height={20} />
+            <Image src={routing} width={20} height={20} alt="icon" />
             <p>مبدا</p>
           </div>
           <span>سنندج</span>
         </div>
         <div className="pr-11 pl-[43px] pt-2 pb-[10px] flex flex-col gap-2">
           <div className="flex gap-2">
-            <Image src={calendar2} width={20} height={20} />
+            <Image src={calendar2} width={20} height={20} alt="icon" />
             <p>تاریخ رفت</p>
           </div>
           <span>20 مهر 1403</span>
         </div>
         <div className="pr-11 pl-[43px] pt-2 pb-[10px] flex flex-col gap-2">
           <div className="flex gap-2">
-            <Image src={calendar3} width={20} height={20} />
+            <Image src={calendar3} width={20} height={20} alt="icon" />
             <p>تاریخ برگشت</p>
           </div>
           <span>28 مهر 1403</span>
         </div>
         <div className="pr-11 pl-[43px] pt-2 pb-[10px] flex flex-col gap-2">
           <div className="flex gap-2">
-            <Image src={bus} width={20} height={20} />
+            <Image src={bus} width={20} height={20} alt="icon" />
             <p>حمل و نقل</p>
           </div>
           <span>اتوبوس</span>
         </div>
         <div className="pr-11 pl-[43px] pt-2 pb-[10px] flex flex-col gap-2">
           <div className="flex gap-2">
-            <Image src={profile2user} width={20} height={20} />
+            <Image src={profile2user} width={20} height={20} alt="icon" />
             <p>ظرفیت</p>
           </div>
           <span>حداکثر 30 نفر</span>
         </div>
         <div className="pr-11 pl-[43px] pt-2 pb-[10px] flex flex-col gap-2">
           <div className="flex gap-2">
-            <Image src={security} width={20} height={20} />
+            <Image src={security} width={20} height={20} alt="icon" />
             <p>بیمه</p>
           </div>
           <span>بیمه 50 هزار دیناری</span>

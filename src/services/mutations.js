@@ -7,8 +7,13 @@ const useSendOTP = () => {
   return useMutation({ mutationFn });
 };
 const useCheckOTP = () => {
+  const queryClient = useQueryClient();
+
   const mutationFn = (data) => api.post("auth/check-otp", data);
-  return useMutation({ mutationFn });
+  const onSuccess = () => {
+    queryClient.invalidateQueries({ queryKey: ["user-data"] });
+  };
+  return useMutation({ mutationFn, onSuccess });
 };
 
 const useUserProfile = () => {
