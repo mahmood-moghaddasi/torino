@@ -1,3 +1,4 @@
+"use client";
 import api from "@/config/api";
 import React from "react";
 import Button_xL from "../atoms/buttons/Button_xL";
@@ -12,8 +13,9 @@ import profile2user from "@/images/icons/profile2user.svg";
 import routing from "@/images/icons/routing.svg";
 import security from "@/images/icons/security.svg";
 import userTick from "@/images/icons/user-tick.svg";
+import { useAddToBasket } from "@/services/mutations";
 
-async function TourDetailCard({ data }) {
+function TourDetailCard({ data }) {
   const {
     id,
     origin,
@@ -28,6 +30,16 @@ async function TourDetailCard({ data }) {
     insurance,
   } = data;
   console.log(data);
+  const { mutate, isPending } = useAddToBasket(id);
+  const reserveHandler = () => {
+    if (isPending) return;
+
+    mutate(null, {
+      onSuccess: (response) => {
+        console.log(response);
+      },
+    });
+  };
   return (
     <div className="bg-white max-w-[1188px] h-[427px] pr-5 pl-6 pt-[29px] pb-5 flex flex-col gap-11 rounded-[10px]">
       <div className="flex h-[265px] gap-6">
@@ -68,7 +80,12 @@ async function TourDetailCard({ data }) {
           </span>
         </div>
         <div className="self-end ">
-          <Button_xL text={"رزرو و خرید"} />
+          <button
+            className="w-[204px] h-[56px] bg-primary-color rounded-[10px] text-white"
+            onClick={reserveHandler}
+          >
+            رزرو و خرید
+          </button>
         </div>
       </div>
       <div className="flex divide-x divide-x-reverse">

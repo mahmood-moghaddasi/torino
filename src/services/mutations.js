@@ -20,4 +20,9 @@ const useUserProfile = () => {
   const mutationFn = (data) => api.put("user/profile", data);
   return useMutation({ mutationFn });
 };
-export { useSendOTP, useCheckOTP, useUserProfile };
+const useAddToBasket = (id) => {
+  console.log(id);
+  const mutationFn = () => api.put(`basket/${id}`);
+  return useMutation({ mutationFn });
+};
+export { useSendOTP, useCheckOTP, useUserProfile, useAddToBasket };
