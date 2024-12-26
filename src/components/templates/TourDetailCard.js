@@ -14,6 +14,8 @@ import routing from "@/images/icons/routing.svg";
 import security from "@/images/icons/security.svg";
 import userTick from "@/images/icons/user-tick.svg";
 import { useAddToBasket } from "@/services/mutations";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 function TourDetailCard({ data }) {
   const {
@@ -29,6 +31,7 @@ function TourDetailCard({ data }) {
     availableSeats,
     insurance,
   } = data;
+  const router = useRouter();
   console.log(data);
   const { mutate, isPending } = useAddToBasket(id);
   const reserveHandler = () => {
@@ -36,6 +39,7 @@ function TourDetailCard({ data }) {
 
     mutate(null, {
       onSuccess: (response) => {
+        router.push("/cart");
         console.log(response);
       },
     });

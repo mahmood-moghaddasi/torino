@@ -24,7 +24,7 @@ function PassengerInfoCard({ mutate }) {
     mutate(values, {
       onSuccess: (data) => {
         console.log(data);
-        router.push("/profile");
+        router.push(router.push("/payment?status=success"));
       },
       onError: (error) => {
         console.log(error);
