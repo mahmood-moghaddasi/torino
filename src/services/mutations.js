@@ -25,4 +25,8 @@ const useAddToBasket = (id) => {
   const mutationFn = () => api.put(`basket/${id}`);
   return useMutation({ mutationFn });
 };
-export { useSendOTP, useCheckOTP, useUserProfile, useAddToBasket };
+const useCheckout = () => {
+  const mutationFn = (data) => api.post(`order`, data);
+  return useMutation({ mutationFn });
+};
+export { useSendOTP, useCheckOTP, useUserProfile, useAddToBasket, useCheckout };

@@ -1,17 +1,19 @@
 import React from "react";
 
-function TransactionTRD() {
+function TransactionTRD({ transaction }) {
   return (
     <tr>
-      <td className="px-4 py-5 text-[14px] text-black font-light">1403/3/3</td>
       <td className="px-4 py-5 text-[14px] text-black font-light">
-        12,000,000
+        {transaction.createdAt}
       </td>
       <td className="px-4 py-5 text-[14px] text-black font-light">
-        ثبت نام در تور گردشگری
+        {transaction.amount}
       </td>
       <td className="px-4 py-5 text-[14px] text-black font-light">
-        c2463bab-dde2-4c05-b0a6-fb4f5f39582b
+        {transaction.type}
+      </td>
+      <td className="px-4 py-5 text-[14px] text-black font-light">
+        {transaction.id}
       </td>
     </tr>
   );

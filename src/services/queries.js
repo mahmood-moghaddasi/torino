@@ -20,5 +20,15 @@ const useGetUserTransaction = () => {
 
   return useQuery({ queryFn, queryKey });
 };
+const useGetBasketData = () => {
+  const queryFn = () => api.get("basket");
+  const queryKey = ["user-basket"];
 
-export { useGetUserData, useGetUserTours, useGetUserTransaction };
+  return useQuery({ queryFn, queryKey });
+};
+export {
+  useGetUserData,
+  useGetUserTours,
+  useGetUserTransaction,
+  useGetBasketData,
+};

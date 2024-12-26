@@ -43,7 +43,7 @@ function TransactionsTable() {
             </tr>
           ) : (
             data.data.map((transaction) => (
-              <TransactionTRD transaction={transaction} />
+              <TransactionTRD key={transaction.id} transaction={transaction} />
             ))
           )}
         </tbody>

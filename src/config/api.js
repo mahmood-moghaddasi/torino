@@ -10,8 +10,6 @@ const api = axios.create({
 api.interceptors.request.use(
   (request) => {
     const accessToken = getCookie("accessToken");
-    // const accessToken =
-    //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlkNTIyZmM4LWFmZTEtNGNlZC1iY2M3LWIxNGQ2ODU2ZjA5YSIsIm1vYmlsZSI6IjA5MTc5NTg5Mzk1IiwiaWF0IjoxNzM0NzAzNzE4LCJleHAiOjE3MzQ3MDczMTh9.zyTcY2SV05f4kFLQ_DsEuc5ZGCJRlTc61-4UlZK7JUA";
 
     console.log(accessToken);
     if (accessToken) {
@@ -39,8 +37,8 @@ api.interceptors.response.use(
         setCookie("refreshToken", res?.response?.data.refreshToken, 360);
         return api(orginialRequest);
       } else {
-        // setCookie("accessToken", "", 0);
-        // setCookie("refreshToken", "", 0);
+        setCookie("accessToken", "", 0);
+        setCookie("refreshToken", "", 0);
       }
     }
     return Promise.reject(error.response.data);
