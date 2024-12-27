@@ -31,7 +31,7 @@ function WhyUs() {
           </p>
         </div>
         <h2 className="text-2xl font-medium">تور طبیعت گردی و تاریخی</h2>
-        <p className="text-justify text-[24px] lead-[44px]">
+        <p className="text-justify text-text-color text-[20px]  lead-[44px] font-iranSans">
           اگر دوست داشته باشید که یک جاذبه طبیعی را از نزدیک ببینید و در دل
           طبیعت چادر بزنید یا در یک اقامتگاه بوم گردی اتاق بگیرید، باید تورهای
           طبیعت‌گردی را خریداری کنید. اما اگر بخواهید از جاذبه‌های گردشگری و

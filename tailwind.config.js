@@ -12,6 +12,11 @@ module.exports = {
         "complementry-color": "#009ECA",
         // "primary-gradiant": "linear-gradient(180deg, #28A745 0%, #10411B 100%)",
       },
+      fontFamily: {
+        iranSans: "iranSans",
+        yekan: "yekan",
+        vazir: "vazir",
+      },
     },
   },
   plugins: [],
