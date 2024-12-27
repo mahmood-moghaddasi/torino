@@ -1,14 +1,19 @@
 "use client";
 import { useGetUserData } from "@/services/queries";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { loginFormContext } from "./LoginContextProvider";
+import { toast } from "react-toastify";
 
-function AuthProvider({ children }) {
+function AuthProvider({ children, page }) {
   const router = useRouter();
   const { isPending, data } = useGetUserData();
-
+  const { setShowLoginForm } = useContext(loginFormContext);
   useEffect(() => {
-    if (!isPending && !data?.data) router.push("/");
+    if (!isPending && !data?.data && page === "checkout") {
+      router.back();
+      toast.success("وارد اکانت خود شوید");
+    } else if (!isPending && !data?.data) router.push("/");
   }, [isPending]);
 
   if (isPending)

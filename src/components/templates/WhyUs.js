@@ -1,14 +1,24 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import p1 from "@/images/slider/1.svg";
 import p2 from "@/images/slider/2.svg";
 import p3 from "@/images/slider/3.svg";
 import p4 from "@/images/slider/4.svg";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
 import arrowR from "@/images/icons/arrow-right.svg";
 import arrowL from "@/images/icons/arrow-left.svg";
 
+import "swiper/css";
+import "swiper/css/effect-cards";
+
+import "../../app/globals.css";
+
+// import required modules
+import { EffectCards, Pagination, Navigation } from "swiper/modules";
 function WhyUs() {
+  const swiper = useSwiper();
   return (
     <div className="flex gap-24 justify-between pr-[26px] pl-[40px] pt-[91px] pb-4">
       <div className=" max-w-[517px] flex flex-col gap-4">
@@ -30,41 +40,52 @@ function WhyUs() {
         </p>
       </div>
       <div className="flex flex-col gap-5">
-        <div className="flex w-[501px]">
-          <Image
-            className=" relative right-0 z-10 w-[389] h-[479] "
-            alt="slider"
-            src={p1}
-            width={500}
-            height={700}
-          />
-          <Image
-            className=" relative z-[9] w-[386] h-[416] left-[338px]"
-            alt="slider"
-            src={p2}
-            width={500}
-            height={700}
-          />
-          <Image
-            className=" relative z-[8] w-[256] h-[333] left-[554px]"
-            alt="slider"
-            src={p3}
-            width={500}
-            height={700}
-          />
-          <Image
-            className=" relative z-[7] w-[216] h-[273] left-[738px]"
-            alt="slider"
-            src={p4}
-            width={500}
-            height={700}
-          />
-        </div>
+        <Swiper
+          effect={"cards"}
+          spaceBetween={30}
+          grabCursor={true}
+          modules={[EffectCards, Pagination, Navigation]}
+          pagination={{
+            clickable: true,
+          }}
+          // className="mySwiper"
+        >
+          <SwiperSlide>
+            <Image
+              // className=" relative right-0 z-30 w-[389] h-[479]"
+              className=" w-[389px] h-[479px] "
+              alt="slider"
+              src={p1}
+              width={700}
+              height={700}
+            />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <Image
+              className=" w-[389px] h-[479px] "
+              alt="slider"
+              src={p3}
+              width={500}
+              height={700}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              className=" w-[389px] h-[479px] "
+              alt="slider"
+              src={p4}
+              width={500}
+              height={700}
+            />
+          </SwiperSlide>
+        </Swiper>
+        {/* 
         <div className="flex gap-[40px] items-center relative right-[100px]">
           <Image src={arrowR} width={36} height={36} alt="arrow" />
           <p className="text-[24px]">1/4</p>
           <Image src={arrowL} width={36} height={36} alt="arrow" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

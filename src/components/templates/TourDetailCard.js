@@ -36,7 +36,7 @@ function TourDetailCard({ data }) {
   const { mutate, isPending } = useAddToBasket(id);
   const reserveHandler = () => {
     if (isPending) return;
-
+    router.push("/cart");
     mutate(null, {
       onSuccess: (response) => {
         router.push("/cart");

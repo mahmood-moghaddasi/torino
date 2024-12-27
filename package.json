@@ -21,6 +21,7 @@
     "react-loader-spinner": "^6.1.6",
     "react-toastify": "^11.0.0",
     "react18-input-otp": "^1.1.4",
+    "swiper": "^11.1.15",
     "yup": "^1.6.1",
     "zaman": "^2.1.1"
   },
