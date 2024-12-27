@@ -7,14 +7,18 @@ import ContactBanner from "../organizations/ContactBanner";
 import MoreFeatures from "./MoreFeatures";
 import WhyUs from "./WhyUs";
 import AuthForm from "./AuthForm";
+import { serverFetch } from "@/services/http";
 
-export default function HomePage() {
+export default async function HomePage({ searchParams }) {
+  const data = await serverFetch("tour", searchParams, {
+    cache: "no-store",
+  });
   return (
     <div>
       <Banner />
-      <div className="px-[126px] flex flex-col items-center">
+      <div className=" px-[126px] flex flex-col items-center">
         <SearchBox />
-        <ToursList />
+        <ToursList tours={data} />
         <ContactBanner />
         <WhyUs />
       </div>

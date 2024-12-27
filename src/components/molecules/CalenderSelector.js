@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import calender from "@/images/icons/calendar.svg";
 function CalenderSelector({ clickHandler }) {
   return (
     <div className="flex gap-2  pr-[18px]">

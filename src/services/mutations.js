@@ -1,6 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import api from "../config/api";
+import { setCookie } from "@/utils/cookie";
 
 const useSendOTP = () => {
   const mutationFn = (data) => api.post("auth/send-otp", data);
@@ -10,7 +11,9 @@ const useCheckOTP = () => {
   const queryClient = useQueryClient();
 
   const mutationFn = (data) => api.post("auth/check-otp", data);
-  const onSuccess = () => {
+  const onSuccess = (data) => {
+    setCookie("accessToken", data?.data?.accessToken, 30);
+    setCookie("refreshToken", data?.data?.refreshToken, 365);
     queryClient.invalidateQueries({ queryKey: ["user-data"] });
   };
   return useMutation({ mutationFn, onSuccess });
@@ -26,7 +29,11 @@ const useAddToBasket = (id) => {
   return useMutation({ mutationFn });
 };
 const useCheckout = () => {
+  const queryClient = useQueryClient();
   const mutationFn = (data) => api.post(`order`, data);
-  return useMutation({ mutationFn });
+  const onSuccess = () => {
+    queryClient.invalidateQueries({ queryKey: ["user-tours"] });
+  };
+  return useMutation({ mutationFn, onSuccess });
 };
 export { useSendOTP, useCheckOTP, useUserProfile, useAddToBasket, useCheckout };
