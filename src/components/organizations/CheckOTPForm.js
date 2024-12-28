@@ -5,7 +5,8 @@ import Button_3xL from "../atoms/buttons/Button_3xL";
 import { useCheckOTP } from "@/services/mutations";
 import { setCookie } from "@/utils/cookie";
 import Image from "next/image";
-import cross from "@/images/icons/cross.svg";
+import arrowL from "@/images/icons/arrow-left.svg";
+import { toast } from "react-toastify";
 function CheckOTPForm({ mobile, setStep, setShowLoginForm }) {
   const { mutate, isPending } = useCheckOTP();
   const [code, setCode] = useState("");
@@ -26,24 +27,21 @@ function CheckOTPForm({ mobile, setStep, setShowLoginForm }) {
           setShowLoginForm(false);
         },
         onError: (error) => {
-          console.log(error);
+          toast.error(error.message);
         },
       }
     );
   };
   return (
-    <div className="bg-white w-[561px] h-[362px] rounded-[20px] flex flex-col items-center pt-[54px] pr-[30px] pl-10 pb-10 relative">
-      <button
-        className=" absolute top-4 left-4"
-        onClick={() => setShowLoginForm(false)}
-      >
-        <Image src={cross} width={20} height={20} alt="cross" />
+    <div className="bg-white w-[561px] h-[362px] rounded-[20px] flex flex-col items-center pt-[54px] pr-[30px] pl-10 pb-10 relative max-md:w-[358px] ">
+      <button className=" absolute top-4 left-4" onClick={() => setStep(1)}>
+        <Image src={arrowL} width={20} height={20} alt="cross" />
       </button>
 
-      <h1 className="text-[28px] text-text-color font-bold font-yekan">
+      <h1 className="text-[28px] text-text-color font-bold font-yekan max-md:text-[22px]">
         کد تایید را وارد کنید
       </h1>
-      <p className="text-[16px] text-text-color font-normal font-yekan">
+      <p className="text-[16px] text-text-color font-normal font-yekan text-center max-md:text-[14px] max-md:mt-4 ">
         کد تایید به شماره {mobile} ارسال شد
       </p>
       <form
@@ -67,7 +65,7 @@ function CheckOTPForm({ mobile, setStep, setShowLoginForm }) {
           <span className="font-vazir ">20 </span>تا ارسال مجدد
         </p>
         <button
-          className="w-[491px] h-[54px] bg-primary-color rounded-[6px] text-white text-[18px] font-medium font-vazir"
+          className="w-[491px] h-[54px] bg-primary-color rounded-[6px] text-white text-[18px] font-medium font-vazir max-md:w-[278px] "
           type="submit"
         >
           ورورد به تورینو

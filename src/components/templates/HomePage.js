@@ -16,7 +16,7 @@ export default async function HomePage({ searchParams }) {
   return (
     <div>
       <Banner />
-      <div className=" px-[126px] flex flex-col items-center">
+      <div className="max-sm:px-[31px] max-md:px-[62px] px-[126px] flex flex-col items-center">
         <SearchBox />
         <ToursList tours={data} />
         <ContactBanner />

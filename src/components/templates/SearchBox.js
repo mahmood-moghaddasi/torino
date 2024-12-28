@@ -36,21 +36,21 @@ function SearchBox() {
     router.push(`/?${query}`);
   };
   return (
-    <div className="h-[71px]">
+    <div className="h-[71px] max-lg:h-auto">
       <div className=" w-fit h-auto mt-[17px] flex flex-col gap-[28px] ">
-        <h1 className="text-[28px] text-center font-yekan font-medium">
+        <h1 className="text-[28px] text-center font-yekan font-medium max-sm:text-[16px] max-md:text-[18px]">
           <span className="text-primary-color ">تورینو </span>
           برگزار کننده بهترین تور های داخلی و خارجی
         </h1>
         <form
-          className="flex border rounded-[20px] py-[7.5px] pr-[2px] pl-[10px]"
+          className="flex max-lg:flex-wrap  border rounded-[20px] max-lg:border-none py-[7.5px] pr-[2px] pl-[10px] max-lg:items-center max-lg:w-auto max-lg:gap-6"
           onSubmit={handleSubmit(submitHandler)}
         >
-          <div className="flex w-auto relative">
-            <div className="flex gap-2 border-l pr-[18px] ">
+          <div className="flex max-lg:flex-wrap  max-lg:h-auto  max-lg:justify-between  w-full relative max-lg:items-center  max-lg:gap-2  max-sm:gap-x-1">
+            <div className="flex gap-2 border-l pr-[18px]  max-lg:border max-lg:w-[48%] rounded-[12px] pt-[14px] pb-[14px]">
               <Image src={location} width={20} height={20} alt="location" />
               <select
-                className="w-[220px] outline-none appearance-none"
+                className="max-md:w-full w-[200px] outline-none appearance-none"
                 {...register("originId")}
               >
                 <option value="1">تهران</option>
@@ -64,11 +64,11 @@ function SearchBox() {
                 <option value="8">مرکز آفرود</option>
               </select>
             </div>
-            <div className="flex gap-2 border-l pr-[18px]  ">
+            <div className="flex gap-2 border-l pr-[18px]  max-lg:border max-lg:w-[48%] rounded-[12px] pt-[14px] pb-[14px] ">
               <Image src={location} width={20} height={20} alt="location" />
 
               <select
-                className="w-[220px] outline-none appearance-none"
+                className="max-md:w-full w-[200px] outline-none appearance-none"
                 {...register("destinationId")}
               >
                 <option value="1">تهران</option>
@@ -82,36 +82,37 @@ function SearchBox() {
                 <option value="8">مرکز آفرود</option>
               </select>
             </div>
-            <Controller
-              control={control}
-              name="date"
-              render={({ field: { onChange } }) => (
-                <DatePicker
-                  position="center"
-                  round="x2"
-                  accentColor="#28A745"
-                  onChange={(e) =>
-                    onChange({
-                      startDate: DateToIso(e.from),
-                      endDate: DateToIso(e.to),
-                    })
-                  }
-                  range
-                />
-              )}
-            />
-            <Image
-              className=" absolute left-36 top-[15px]"
-              src={calender}
-              width={20}
-              height={20}
-              alt="calender"
-              onClick={clickHandler}
-            />
+            <div className="relative max-lg:border max-lg:w-full rounded-[12px] pt-[14px] pb-[14px]">
+              <Controller
+                control={control}
+                name="date"
+                render={({ field: { onChange } }) => (
+                  <DatePicker
+                    position="center"
+                    round="x2"
+                    accentColor="#28A745"
+                    onChange={(e) =>
+                      onChange({
+                        startDate: DateToIso(e.from),
+                        endDate: DateToIso(e.to),
+                      })
+                    }
+                    range
+                  />
+                )}
+              />
+              <Image
+                className=" absolute max-lg:top-[1px] max-lg:right-3 right-3 top-[15px]"
+                src={calender}
+                width={20}
+                height={20}
+                alt="calender"
+              />
+            </div>
           </div>
           <button
             type="submit"
-            className="w-[190px] h-[51px] bg-primary-color rounded-[16px] text-white"
+            className="w-[190px] h-[51px] bg-primary-color rounded-[16px] text-white max-lg:w-full"
           >
             جست و جو
           </button>

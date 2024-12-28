@@ -15,14 +15,15 @@ import { useRouter } from "next/navigation";
 
 function ProfileLayout({ children }) {
   const [page, setPage] = useState(1);
-  const selected = "bg-primary-color/25";
+  const selected =
+    "bg-primary-color/25 max-md:border-b max-md:border-primary-color max-md:bg-white";
   const router = useRouter();
   return (
     <AuthProvider>
-      <div className="flex pt-9 pr-[126px] pl-[126px] gap-[18px] mb-12">
-        <div className=" h-[170px] divide-y  border  w-auto rounded-[10px] overflow-hidden">
+      <div className="flex pt-9 pr-[126px] pl-[126px] gap-[18px] mb-12 max-md:flex-col">
+        <div className=" h-[170px] divide-y max-md:divide-y-0  max-md:border-none  max-md:flex max-md:h-auto max-md:rounded-none max-md:flex-row  border  w-auto rounded-[10px] overflow-hidden">
           <div
-            className={`flex cursor-pointer gap-2 w-[284px] pt-5 pb-4 pr-3 ${page === 1 ? selected : ""}`}
+            className={`flex cursor-pointer gap-2 w-[284px] pt-5 pb-4 pr-3 ${page === 1 ? selected : ""}  border-b  `}
             onClick={() => {
               setPage(1);
               router.push("/profile");
@@ -41,7 +42,7 @@ function ProfileLayout({ children }) {
             </p>
           </div>
           <div
-            className={`flex gap-2 w-[284px] cursor-pointer pt-4 pb-4 pr-3 ${page === 2 ? selected : ""}`}
+            className={`flex gap-2 w-[284px] cursor-pointer pt-4 pb-4 pr-3  ${page === 2 ? selected : ""}  border-b `}
             onClick={() => {
               setPage(2);
               router.push("/profile/tours");
@@ -60,7 +61,7 @@ function ProfileLayout({ children }) {
             </p>
           </div>
           <div
-            className={`flex gap-2 w-[284px] cursor-pointer pt-4 pb-5 pr-3  ${page === 3 ? selected : ""}`}
+            className={`flex gap-2 w-[284px] cursor-pointer pt-4 pb-5 pr-3  ${page === 3 ? selected : ""}  border-b `}
             onClick={() => {
               setPage(3);
               router.push("/profile/transactions");
@@ -73,7 +74,7 @@ function ProfileLayout({ children }) {
               alt="convert"
             />
             <p
-              className={`text-[14px] font-normal  ${page === 3 ? "text-primary-color" : "text-text-color"} `}
+              className={`text-[14px] font-normal  ${page === 3 ? "text-primary-color" : "text-text-color"}  `}
             >
               تراکنش های من
             </p>

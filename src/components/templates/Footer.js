@@ -10,7 +10,7 @@ function Footer() {
   return (
     <div>
       <div className="px-[126px] pb-[28px]  border-b">
-        <div className="flex justify-between border-t pt-[21px] ">
+        <div className="flex justify-between border-t pt-[21px] max-md:border-dashed max-md:flex-col max-md:items-center max-md:w-full">
           <div className="flex gap-[140px]">
             <div className="flex flex-col gap-2">
               <h3 className="text-[24px] text-text-color font-medium font-yekan">
@@ -47,12 +47,20 @@ function Footer() {
               </p>
             </div>
           </div>
-          <div className="flex flex-col items-end gap-5">
-            <Image src={torino} width={146} height={44} alt="logo" />
-            <p className="font-vazir font-normal text-[15px]">
-              تلفن پشتیبانی :۸۵۴۷-۰۲۱
-            </p>
-            <div className="flex justify-end gap-6">
+          <div
+            className="flex flex-col items-end gap-5 max-md:flex-row-reverse
+          max-md:items-center max-md:justify-between max-md:w-full"
+          >
+            <div
+              className="flex max-md:flex-col 
+            max-md:gap-3 max-md:items-end max-md:w-full "
+            >
+              <Image src={torino} width={146} height={44} alt="logo" />
+              <p className="font-vazir font-normal text-[15px]">
+                تلفن پشتیبانی :۸۵۴۷-۰۲۱
+              </p>
+            </div>
+            <div className="flex justify-end max-md:items-start gap-6 max-md:flex-wrap">
               <Image src={aira} width={68} height={74} alt="logo" />
               <Image src={samandeh} width={67} height={74} alt="logo" />
               <Image src={onlineShop} width={68} height={74} alt="logo" />
