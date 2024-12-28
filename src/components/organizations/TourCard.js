@@ -16,12 +16,17 @@ function TourCard({ data }) {
         alt={title}
       />
       <div className="flex flex-col p-2 border gap-1 ">
-        <p className="text-[22px] font-bold">{title}</p>
-        <p className="text-text-color opacity-65 text-[15px]">هتل 3 ستاره</p>
+        <p className="text-[22px] font-yekan font-normal">{title}</p>
+        <p className="text-text-color/70 font-yekan font-normal opacity-65 text-[15px]">
+          هتل 3 ستاره
+        </p>
       </div>
       <div className="flex justify-between p-2 border rounded-b-[10px]">
         <Button_2xS text={"رزرو"} tourId={id} />
-        <span>{price}تومان</span>
+        <span className="font-vazir font-normal text-[12px]">
+          <span className="text-complementry-color text-[16px]"> {price} </span>
+          تومان
+        </span>
       </div>
     </div>
   );

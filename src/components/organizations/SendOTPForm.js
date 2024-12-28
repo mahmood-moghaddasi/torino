@@ -34,17 +34,26 @@ function SendOTPForm({ setMobile, mobile, setStep, setShowLoginForm }) {
       >
         <Image src={cross} width={20} height={20} alt="cross" />
       </button>
-      <h1>ورود به تورینو</h1>
+      <h1 className="font-yekan font-bold text-[28px] text-text-color">
+        ورود به تورینو
+      </h1>
       <form onSubmit={sendOTPHandler}>
-        <label className="text-text-color">شماره مبایل خود را وارد کنید</label>
+        <label className="text-black font-yekan font-light text-[16px]">
+          شماره مبایل خود را وارد کنید
+        </label>
         <input
-          placeholder="۴۳۲۵***۲۱۹۰"
-          className="h-[54px] w-[491px] border border-black/25 rounded-[6px] outline-none mt-3
+          placeholder="09170000000"
+          className="h-[54px] w-[491px] placeholder:font-vazir placeholder:font-light font-vazir font-light border border-black/25 rounded-[6px] outline-none mt-3
       pr-2 mb-10"
           value={mobile}
           onChange={(e) => setMobile(e.target.value)}
         />
-        <Button_3xL text={"ارسال کد تایید"} type={"submit"} />
+        <button
+          className="w-[491px] h-[54px] bg-primary-color rounded-[6px] text-white text-[18px] font-medium font-vazir "
+          type="submit"
+        >
+          ارسال کد تایید
+        </button>
       </form>
     </div>
   );

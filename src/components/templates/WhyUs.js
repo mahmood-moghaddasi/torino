@@ -26,11 +26,13 @@ function WhyUs() {
           <div className="bg-primary-dark-color rounded-[50%] w-[58px] h-[58px] flex items-center justify-center">
             <p className=" absolute text-white font-bold text-[38px]">؟</p>
           </div>
-          <p className="text-[40px] mb-4">
-            چرا <span className="text-primary-color">تورینو </span>؟
+          <p className="text-[40px] mb-4 font-vazir font-extrabold">
+            چرا <span className="text-primary-color ">تورینو </span>؟
           </p>
         </div>
-        <h2 className="text-2xl font-medium">تور طبیعت گردی و تاریخی</h2>
+        <h2 className="font-medium font-vazir  text-[24px]">
+          تور طبیعت گردی و تاریخی
+        </h2>
         <p className="text-justify text-text-color text-[20px]  lead-[44px] font-iranSans">
           اگر دوست داشته باشید که یک جاذبه طبیعی را از نزدیک ببینید و در دل
           طبیعت چادر بزنید یا در یک اقامتگاه بوم گردی اتاق بگیرید، باید تورهای

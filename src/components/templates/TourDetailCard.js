@@ -54,38 +54,38 @@ function TourDetailCard({ data }) {
           // height={265}
         />
         <div className="flex flex-col gap-4 ">
-          <h1 className="text-[32px] font-bold">{title}</h1>
-          <p className="text-[20px] text-text-color font-normal">
+          <h1 className="text-[32px] font-bold font-yekan">{title}</h1>
+          <p className="text-[20px] text-text-color font-normal font-vazir">
             ۵ روز و ۴ شب
           </p>
           <div className="flex gap-8 mt-2">
             <div className="flex gap-2">
               <Image src={userTick} width={24} height={24} alt="icon" />
-              <span className="text-[20px] text-[#7D7D7D] font-normal">
+              <span className="text-[20px] text-[#7D7D7D] font-normal font-yekan">
                 تورلیدر از مبدا
               </span>
             </div>
             <div className="flex gap-2">
               <Image src={map} width={24} height={24} alt="icon" />
-              <span className="text-[20px] text-[#7D7D7D] font-normal">
+              <span className="text-[20px] text-[#7D7D7D] font-normal font-yekan">
                 برنامه صفر
               </span>
             </div>
             <div className="flex gap-2">
               <Image src={medal} width={24} height={24} alt="icon" />
-              <span className="text-[20px] text-[#7D7D7D] font-normal">
+              <span className="text-[20px] text-[#7D7D7D] font-normal font-yekan">
                 تضمین کیفیت
               </span>
             </div>
           </div>
-          <span className="text-complementry-color text-[28px] mt-4">
+          <span className="text-complementry-color text-[28px] mt-4 font-vazir">
             {price}
             <span className="text-text-color/80 text-[14px]">تومان</span>
           </span>
         </div>
         <div className="self-end ">
           <button
-            className="w-[204px] h-[56px] bg-primary-color rounded-[10px] text-white"
+            className="w-[204px] h-[56px] bg-primary-color rounded-[10px] text-white font-vazir font-normal text-[24px]"
             onClick={reserveHandler}
           >
             رزرو و خرید
@@ -96,44 +96,68 @@ function TourDetailCard({ data }) {
         <div className="pr-11 pl-[43px] pt-2 pb-[10px] flex flex-col gap-2">
           <div className="flex gap-2">
             <Image src={routing} width={20} height={20} alt="icon" />
-            <p>مبدا</p>
+            <p className="font-vazir font-normal text-[18px] text-[#444444]">
+              مبدا
+            </p>
           </div>
-          <span>{origin.name}</span>
+          <span className="font-vazir font-medium text-[16px]">
+            {origin.name}
+          </span>
         </div>
         <div className="pr-11 pl-[43px] pt-2 pb-[10px] flex flex-col gap-2">
           <div className="flex gap-2">
             <Image src={calendar2} width={20} height={20} alt="icon" />
-            <p>تاریخ رفت</p>
+            <p className="font-vazir font-normal text-[18px] text-[#444444]">
+              تاریخ رفت
+            </p>
           </div>
-          <span>20 مهر 1403</span>
+          <span className="font-vazir font-medium text-[16px]">
+            20 مهر 1403
+          </span>
         </div>
         <div className="pr-11 pl-[43px] pt-2 pb-[10px] flex flex-col gap-2">
           <div className="flex gap-2">
             <Image src={calendar3} width={20} height={20} alt="icon" />
-            <p>تاریخ برگشت</p>
+            <p className="font-vazir font-normal text-[18px] text-[#444444]">
+              تاریخ برگشت
+            </p>
           </div>
-          <span>28 مهر 1403</span>
+          <span className="font-vazir font-medium text-[16px]">
+            28 مهر 1403
+          </span>
         </div>
         <div className="pr-11 pl-[43px] pt-2 pb-[10px] flex flex-col gap-2">
           <div className="flex gap-2">
             <Image src={bus} width={20} height={20} alt="icon" />
-            <p>حمل و نقل</p>
+            <p className="font-vazir font-normal text-[18px] text-[#444444]">
+              حمل و نقل
+            </p>
           </div>
-          <span>{fleetVehicle}</span>
+          <span className="font-vazir font-medium text-[16px]">
+            {fleetVehicle}
+          </span>
         </div>
         <div className="pr-11 pl-[43px] pt-2 pb-[10px] flex flex-col gap-2">
           <div className="flex gap-2">
             <Image src={profile2user} width={20} height={20} alt="icon" />
-            <p>ظرفیت</p>
+            <p className="font-vazir font-normal text-[18px] text-[#444444]">
+              ظرفیت
+            </p>
           </div>
-          <span>حداکثر {availableSeats} نفر</span>
+          <span className="font-vazir font-medium text-[16px]">
+            حداکثر {availableSeats} نفر
+          </span>
         </div>
         <div className="pr-11 pl-[43px] pt-2 pb-[10px] flex flex-col gap-2">
           <div className="flex gap-2">
             <Image src={security} width={20} height={20} alt="icon" />
-            <p>بیمه</p>
+            <p className="font-vazir font-normal text-[18px] text-[#444444]">
+              بیمه
+            </p>
           </div>
-          <span>بیمه 50 هزار دیناری</span>
+          <span className="font-vazir font-medium text-[16px]">
+            بیمه 50 هزار دیناری
+          </span>
         </div>
       </div>
     </div>

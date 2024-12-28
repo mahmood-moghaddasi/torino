@@ -18,6 +18,7 @@ function Header() {
   console.log(router);
   const { data } = useGetUserData();
   console.log(data);
+
   return (
     <>
       <header className="w-screen pt-[15px] pb-3 px-[126px] h-[74px]  flex justify-between items-center shadow">
@@ -45,13 +46,15 @@ function Header() {
               onClick={() => setShowMenu(!showMenu)}
             >
               <Image src={arrow} width={24} height={24} alt="arrow" />
-              <p className="text-primary-color text-lg font-normal">
+              <p className="text-primary-color text-lg font-normal font-vazir">
                 {data.data.mobile}
               </p>
               <Image src={person} width={24} height={24} alt="person" />
             </div>
           )}
-          {showMenu && <ProfileButtonMenu setShowMenu={setShowMenu} />}
+          {showMenu && (
+            <ProfileButtonMenu data={data} setShowMenu={setShowMenu} />
+          )}
         </div>
       </header>
     </>

@@ -13,27 +13,45 @@ function Footer() {
         <div className="flex justify-between border-t pt-[21px] ">
           <div className="flex gap-[140px]">
             <div className="flex flex-col gap-2">
-              <h3 className="text-[24px] text-text-color font-medium">
+              <h3 className="text-[24px] text-text-color font-medium font-yekan">
                 تورینو
               </h3>
-              <p className="text-[18px] text-text-color">درباره ما</p>
-              <p className="text-[18px] text-text-color">تماس با ما</p>
-              <p className="text-[18px] text-text-color">چرا تورینو</p>
-              <p className="text-[18px] text-text-color">بیمه مسافرتی</p>
+              <p className="text-[18px] text-text-color font-yekan font-normal">
+                درباره ما
+              </p>
+              <p className="text-[18px] text-text-color font-yekan font-normal">
+                تماس با ما
+              </p>
+              <p className="text-[18px] text-text-color font-yekan font-normal">
+                چرا تورینو
+              </p>
+              <p className="text-[18px] text-text-color font-yekan font-normal">
+                بیمه مسافرتی
+              </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h3 className="text-[24px] text-text-color font-medium">
+              <h3 className="text-[24px] text-text-color font-medium font-yekan">
                 خدمات مشتریان
               </h3>
-              <p className="text-[18px] text-text-color">پشتیبانی آنلاین</p>
-              <p className="text-[18px] text-text-color">راهنمای خرید </p>
-              <p className="text-[18px] text-text-color">راهنمای استرداد</p>
-              <p className="text-[18px] text-text-color">پرسش و پاسخ</p>
+              <p className="text-[18px] text-text-color font-yekan font-normal">
+                پشتیبانی آنلاین
+              </p>
+              <p className="text-[18px] text-text-color font-yekan font-normal">
+                راهنمای خرید{" "}
+              </p>
+              <p className="text-[18px] text-text-color font-yekan font-normal">
+                راهنمای استرداد
+              </p>
+              <p className="text-[18px] text-text-color font-yekan font-normal">
+                پرسش و پاسخ
+              </p>
             </div>
           </div>
           <div className="flex flex-col items-end gap-5">
             <Image src={torino} width={146} height={44} alt="logo" />
-            <p className="">تلفن پشتیبانی :۸۵۴۷-۰۲۱</p>
+            <p className="font-vazir font-normal text-[15px]">
+              تلفن پشتیبانی :۸۵۴۷-۰۲۱
+            </p>
             <div className="flex justify-end gap-6">
               <Image src={aira} width={68} height={74} alt="logo" />
               <Image src={samandeh} width={67} height={74} alt="logo" />
@@ -44,7 +62,9 @@ function Footer() {
         </div>
       </div>
       <div className="flex items-center justify-center py-3 ">
-        <p>کلیه حقوق این وب سایت متعلق به تورینو میباشد.</p>
+        <p className="font-yekan font-normal text-[15px]">
+          کلیه حقوق این وب سایت متعلق به تورینو میباشد.
+        </p>
       </div>
     </div>
   );

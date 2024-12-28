@@ -14,10 +14,10 @@ export default function Error({ error, reset }) {
   return (
     <div className="pl-[174px] pr-[174px] flex items-center w-full justify-between">
       <div className="flex flex-col items-center gap-[25px]">
-        <p className="text-[36px] text-text-color font-semibold">
+        <p className="text-[36px] text-text-color font-bold font-yekan">
           اتصال با سرور برقرار نیست!
         </p>
-        <p className="text-[24px] text-text-color font-semibold">
+        <p className="text-[24px] text-text-color font-bold font-yekan">
           لطفا بعدا دوباره امتحان کنید.
         </p>
       </div>

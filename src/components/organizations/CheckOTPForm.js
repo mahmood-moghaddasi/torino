@@ -40,10 +40,10 @@ function CheckOTPForm({ mobile, setStep, setShowLoginForm }) {
         <Image src={cross} width={20} height={20} alt="cross" />
       </button>
 
-      <h1 className="text-[28px] text-text-color font-semibold">
+      <h1 className="text-[28px] text-text-color font-bold font-yekan">
         کد تایید را وارد کنید
       </h1>
-      <p className="text-[16px] text-text-color font-normal">
+      <p className="text-[16px] text-text-color font-normal font-yekan">
         کد تایید به شماره {mobile} ارسال شد
       </p>
       <form
@@ -63,8 +63,15 @@ function CheckOTPForm({ mobile, setStep, setShowLoginForm }) {
             marginRight: "5px",
           }}
         />
-        <p className="text-[12px] text-text-color">تا ارسال مجدد</p>
-        <Button_3xL text={"ارسال کد تایید"} type={"submit"} />
+        <p className="text-[12px] font-yekan text-text-color font-light ">
+          <span className="font-vazir ">20 </span>تا ارسال مجدد
+        </p>
+        <button
+          className="w-[491px] h-[54px] bg-primary-color rounded-[6px] text-white text-[18px] font-medium font-vazir"
+          type="submit"
+        >
+          ورورد به تورینو
+        </button>
       </form>
     </div>
   );

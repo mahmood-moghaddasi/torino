@@ -43,13 +43,15 @@ function PassengerInfoCard({ mutate }) {
     >
       <div className="flex">
         <Image src={person} width={24} height={24} alt="person" />
-        <h1 className="text-[#171717] text-[24px] font-normal">مشخصات مسافر</h1>
+        <h1 className="text-[#171717] text-[24px] font-normal font-vazir">
+          مشخصات مسافر
+        </h1>
       </div>
       <div className="flex flex-wrap gap-y-6 gap-x-5 ">
         <div className="w-auto h-auto flex flex-col">
           <input
             {...register("fullName")}
-            className={`w-[263px] h-[50px] outline-none border ${!!errors?.fullName ? "border-[#D40000]" : "border-black/50"} rounded-[5px] pr-2 text-[14px] font-normal `}
+            className={`w-[263px] h-[50px] outline-none border ${!!errors?.fullName ? "border-[#D40000]" : "border-black/50"} rounded-[5px] pr-2 text-[14px] font-normal  font-yekan placeholder:font-yekan placeholder:font-normal`}
             placeholder="نام و نام خانوادگی"
           />
           {!!errors?.fullName && (
@@ -59,7 +61,7 @@ function PassengerInfoCard({ mutate }) {
         <div className="w-auto h-auto flex flex-col">
           <input
             {...register("nationalCode")}
-            className={`w-[263px] h-[50px] outline-none border ${!!errors?.nationalCode ? "border-[#D40000]" : "border-black/50"} rounded-[5px] pr-2 text-[14px] font-normal `}
+            className={`w-[263px] h-[50px] outline-none border ${!!errors?.nationalCode ? "border-[#D40000]" : "border-black/50"} rounded-[5px] pr-2 text-[14px] font-normal font-yekan placeholder:font-yekan placeholder:font-normal `}
             placeholder="کد ملی"
             type="number"
           />
@@ -97,7 +99,7 @@ function PassengerInfoCard({ mutate }) {
           {" "}
           <select
             {...register("gender")}
-            className={`w-[263px] h-[50px] outline-none border ${!!errors?.gender ? "border-[#D40000]" : "border-black/50"} rounded-[5px] pr-2 text-[14px] font-normal `}
+            className={`w-[263px] h-[50px] outline-none border ${!!errors?.gender ? "border-[#D40000]" : "border-black/50"} rounded-[5px] pr-2 text-[14px] font-normal font-yekan placeholder:font-yekan placeholder:font-normal `}
             placeholder=""
           >
             <option value="" selected disabled hidden>

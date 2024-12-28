@@ -38,9 +38,9 @@ function SearchBox() {
   return (
     <div className="h-[71px]">
       <div className=" w-fit h-auto mt-[17px] flex flex-col gap-[28px] ">
-        <h1 className="text-[28px] text-center">
-          <span className="text-primary-color">تورینو </span>برگزار کننده بهترین
-          تور های داخلی و خارجی
+        <h1 className="text-[28px] text-center font-yekan font-medium">
+          <span className="text-primary-color ">تورینو </span>
+          برگزار کننده بهترین تور های داخلی و خارجی
         </h1>
         <form
           className="flex border rounded-[20px] py-[7.5px] pr-[2px] pl-[10px]"

@@ -8,10 +8,12 @@ function ContactBanner() {
   return (
     <div className="flex w-full h-[251px] mt-[109px] border rounded-[10px]">
       <div className="w-3/4 h-full gap-3 bg-primary-color relative overflow-hidden pr-[57px] pt-[36px]">
-        <p className="text-[48px] text-white font-bold">
+        <p className="text-[48px] text-white font-yekan font-extrabold">
           خرید تلفنی از <span className="text-primary-dark-color">تورینو</span>
         </p>
-        <p className="text-[32px] text-white">به هرکجا که میخواهید!</p>
+        <p className="text-[32px] text-white font-yekan font-normal">
+          به هرکجا که میخواهید!
+        </p>
         <Image
           className=" absolute left-11 top-[26px]"
           src={cartoon}
@@ -22,10 +24,12 @@ function ContactBanner() {
       </div>
       <div className="flex flex-col justify-center gap-3 items-center w-1/4 h-full">
         <div className="flex">
-          <p className="text-[28px]">021-1840</p>
+          <p className="text-[28px] font-vazir font-medium">021-1840</p>
           <Image src={call} width={24} height={24} alt="call" />
         </div>
-        <Button_M text={"اطلاعات بیشتر"} />
+        <button className="w-[175px] h-[41px] bg-primary-dark-color rounded-[9px] text-white font-vazir font-medium">
+          اطلاعات بیشتر
+        </button>
       </div>
     </div>
   );

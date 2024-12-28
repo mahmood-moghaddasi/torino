@@ -9,7 +9,8 @@ import { useRouter } from "next/navigation";
 import { setCookie } from "@/utils/cookie";
 import { Router } from "next/router";
 import { QueryClient } from "@tanstack/react-query";
-function ProfileButtonMenu({ setShowMenu }) {
+import { useGetUserData } from "@/services/queries";
+function ProfileButtonMenu({ setShowMenu, data }) {
   const router = useRouter();
   const logoutHanlder = () => {
     setCookie("accessToken", "", 0);
@@ -22,8 +23,8 @@ function ProfileButtonMenu({ setShowMenu }) {
         <div className="w-7 h-7 rounded-full bg-[#D9D9D9] flex items-center justify-center">
           <Image src={profileGray} width={16} height={16} alt="person" />
         </div>
-        <p className="text-[16px] font-medium text-secondary-color">
-          09179589395
+        <p className="text-[16px] font-medium text-secondary-color font-vazir">
+          {data.data.mobile}
         </p>
       </div>
       <div

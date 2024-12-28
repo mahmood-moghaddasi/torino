@@ -10,8 +10,8 @@ function MoreFeatures() {
       <div className="flex items-center gap-2">
         <Image src={percent} width={121.42} height={109.03} alt="icon" />
         <div className="w-[202px]">
-          <p className="text-[26px] font-medium">بصرفه ترین قیمت</p>
-          <p className="text-[16px] font-light">
+          <p className="text-[26px] font-medium font-vazir">بصرفه ترین قیمت</p>
+          <p className="text-[16px] font-light font-vazir text-text-color">
             بصرفه ترین و ارزان ترین قیمت تور را از ما بخواهید.
           </p>
         </div>
@@ -19,8 +19,8 @@ function MoreFeatures() {
       <div className="flex items-center gap-2">
         <Image src={comment} width={109.03} height={99.012} alt="icon" />
         <div className="w-[248px]">
-          <p className="text-[26px] font-medium">پشتیبانی</p>
-          <p className="text-[16px] font-light">
+          <p className="text-[26px] font-medium font-vazir">پشتیبانی</p>
+          <p className="text-[16px] font-light font-vazir text-text-color">
             پشتیبانی و همراهی 24 ساعته در تمامی مراحل سفر شما.
           </p>
         </div>
@@ -28,8 +28,8 @@ function MoreFeatures() {
       <div className="flex items-center gap-2">
         <Image src={hearts} width={104.08} height={104.08} alt="icon" />
         <div className="w-[192px]">
-          <p className="text-[26px] font-medium">رضایت کاربران</p>
-          <p className="text-[16px] font-light">
+          <p className="text-[26px] font-medium font-vazir">رضایت کاربران</p>
+          <p className="text-[16px] font-light font-vazir text-text-color">
             رضایت بیش از 10هزار کاربر از تور های ما.{" "}
           </p>
         </div>

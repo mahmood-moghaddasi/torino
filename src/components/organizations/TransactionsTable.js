@@ -12,16 +12,16 @@ function TransactionsTable() {
       <table className="w-full table-fixed text-right ">
         <thead>
           <tr className=" bg-[#F3F3F3] ">
-            <th className="px-4 py-[15px] text-[16px] text-black font-normal">
+            <th className="px-4 py-[15px] text-[16px] text-black font-normal font-yekan">
               تاریخ و ساعت
             </th>
-            <th className="px-4 py-[15px] text-[16px] text-black font-normal">
+            <th className="px-4 py-[15px] text-[16px] text-black font-normal font-yekan">
               مبلغ (تومان)
             </th>
-            <th className="px-4 py-[15px] text-[16px] text-black font-normal">
+            <th className="px-4 py-[15px] text-[16px] text-black font-normal font-yekan">
               نوع تراکنش
             </th>
-            <th className="px-4 py-[15px] text-[16px] text-black font-normal">
+            <th className="px-4 py-[15px] text-[16px] text-black font-normal font-yekan">
               شماره سفارش
             </th>
           </tr>
