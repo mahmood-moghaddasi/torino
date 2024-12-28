@@ -6,7 +6,10 @@ import call from "@/images/icons/call.svg";
 import Button_M from "../atoms/buttons/Button_M";
 function ContactBanner() {
   return (
-    <div className="flex w-full h-[251px] mt-[109px] border rounded-[10px]">
+    <div
+      className="flex w-full h-[251px] mt-[109px] border rounded-[10px] overflow-hidden
+  "
+    >
       <div className="w-3/4 h-full gap-3 bg-primary-color relative overflow-hidden pr-[57px] pt-[36px]">
         <p className="text-[48px] text-white font-yekan font-extrabold">
           خرید تلفنی از <span className="text-primary-dark-color">تورینو</span>

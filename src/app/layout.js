@@ -5,6 +5,8 @@ import TanstackQueryProvider from "@/provider/TanstackQueryProvider";
 import { ToastContainer } from "react-toastify";
 import AuthForm from "@/components/templates/AuthForm";
 import LoginContextProvider from "@/provider/LoginContextProvider";
+import SidbarMenu from "@/components/templates/SidbarMenu";
+import SidebarContextProvider from "@/provider/SidebarContextProvider";
 
 export default function RootLayout({ children }) {
   return (
@@ -12,9 +14,12 @@ export default function RootLayout({ children }) {
       <body>
         <TanstackQueryProvider>
           <LoginContextProvider>
-            <Header />
-            <AuthForm />
-            {children}
+            <SidebarContextProvider>
+              <Header />
+              <SidbarMenu />
+              <AuthForm />
+              {children}
+            </SidebarContextProvider>
           </LoginContextProvider>
         </TanstackQueryProvider>
         <Footer />

@@ -4,12 +4,14 @@ import React, { useContext, useState } from "react";
 import logo from "@/images/Torino-logo.svg";
 import arrow from "@/images/icons/arrow-down.svg";
 import person from "@/images/icons/person.svg";
+import menu from "@/images/icons/menu.svg";
 
 import Login_Button from "../atoms/Login_Button";
 import { loginFormContext } from "@/provider/LoginContextProvider";
 import { useRouter } from "next/navigation";
 import { useGetUserData } from "@/services/queries";
 import ProfileButtonMenu from "../organizations/ProfileButtonMenu";
+import { sidebarContext } from "@/provider/SidebarContextProvider";
 
 function Header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -18,11 +20,11 @@ function Header() {
   console.log(router);
   const { data } = useGetUserData();
   console.log(data);
-
+  const { showSidebar, setShowSidebar } = useContext(sidebarContext);
   return (
     <>
       <header className="w-screen pt-[15px] pb-3 px-[126px] h-[74px]  flex justify-between items-center shadow">
-        <div className="flex items-center gap-[84px]">
+        <div className="flex items-center gap-[84px] max-lg:hidden">
           <Image
             src={logo}
             width={146}
@@ -36,6 +38,12 @@ function Header() {
             <p>درباره ما</p>
             <p>تماس با ما</p>
           </div>
+        </div>
+        <div
+          className="hidden max-lg:inline"
+          onClick={() => setShowSidebar(true)}
+        >
+          <Image src={menu} width={24} height={24} />
         </div>
         <div className=" relative">
           {!data?.data ? (

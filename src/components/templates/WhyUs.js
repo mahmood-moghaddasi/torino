@@ -23,7 +23,7 @@ function WhyUs() {
     <div className="flex gap-24 justify-between pr-[26px] pl-[40px] pt-[91px] pb-4">
       <div className=" max-w-[517px] flex flex-col gap-4">
         <div className="flex gap-[15px]">
-          <div className="bg-primary-dark-color rounded-[50%] w-[58px] h-[58px] flex items-center justify-center">
+          <div className="bg-gradient-to-b from-green-500 to-emerald-800 rounded-[50%] w-[58px] h-[58px] flex items-center justify-center">
             <p className=" absolute text-white font-bold text-[38px]">؟</p>
           </div>
           <p className="text-[40px] mb-4 font-vazir font-extrabold">
